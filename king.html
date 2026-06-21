@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>کینگ استودیو | سلطنتی</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', 'Poppins', system-ui, sans-serif;
+      background: #0a0c10;
+      color: #e8eaf0;
+      padding: 20px;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container {
+      max-width: 1150px;
+      width: 100%;
+      background: linear-gradient(145deg, #131a24, #0e141c);
+      border-radius: 48px;
+      padding: 30px 30px 20px;
+      box-shadow: 0 25px 50px -8px rgba(0,0,0,0.9), inset 0 0 0 1px rgba(245, 176, 66, 0.15);
+      border: 1px solid #2a2f3a;
+      transition: all 0.3s;
+    }
+
+    /* هدر سلطنتی */
+    .header {
+      text-align: center;
+      padding-bottom: 20px;
+      margin-bottom: 28px;
+      border-bottom: 2px solid #b8860b;
+      position: relative;
+    }
+
+    .header::after {
+      content: "✦";
+      position: absolute;
+      bottom: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #0e141c;
+      padding: 0 16px;
+      color: #f5b042;
+      font-size: 1.5rem;
+      text-shadow: 0 0 12px #f5b042;
+    }
+
+    .header h1 {
+      font-size: 3.6rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      background: linear-gradient(135deg, #f7d875, #f5b042, #d48c2c);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-shadow: 0 0 30px rgba(245, 176, 66, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .header h1 span {
+      font-size: 2.8rem;
+      -webkit-text-fill-color: initial;
+      color: #f5b042;
+    }
+
+    .header p {
+      color: #b8c7dd;
+      font-size: 1.2rem;
+      margin-top: 6px;
+      letter-spacing: 1px;
+      font-weight: 300;
+      border-top: 1px solid #2f3a47;
+      display: inline-block;
+      padding-top: 8px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    /* عنوان بخش‌ها */
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: 600;
+      color: #f5b042;
+      border-right: 6px solid #f5b042;
+      padding-right: 18px;
+      margin: 32px 0 22px 0;
+      text-shadow: 0 0 12px rgba(245, 176, 66, 0.2);
+      letter-spacing: 0.5px;
+    }
+
+    /* پروژه‌ها */
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 22px;
+      margin-bottom: 25px;
+    }
+
+    .project-card {
+      background: #141d28;
+      border-radius: 24px;
+      padding: 24px 14px 18px;
+      text-align: center;
+      border: 1px solid #2c3848;
+      box-shadow: 0 6px 0 #0b0e14;
+      transition: 0.25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-card::before {
+      content: "";
+      position: absolute;
+      top: -2px;
+      right: -2px;
+      width: 60px;
+      height: 60px;
+      background: radial-gradient(circle, rgba(245,176,66,0.08) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      border-color: #f5b042;
+      box-shadow: 0 12px 0 #0b0e14, 0 0 25px rgba(245, 176, 66, 0.05);
+    }
+
+    .project-card h3 {
+      font-size: 1.4rem;
+      color: #f5d98f;
+      margin-bottom: 6px;
+    }
+
+    .project-card p {
+      font-size: 0.9rem;
+      color: #b0c4db;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #f5b042;
+      color: #0b0e14;
+      font-weight: 700;
+      padding: 3px 16px;
+      border-radius: 40px;
+      font-size: 0.7rem;
+      letter-spacing: 0.5px;
+      margin-top: 10px;
+      box-shadow: 0 2px 0 #a57228;
+    }
+
+    .badge-coming {
+      background: #4a5a6e;
+      color: #eef2f7;
+      box-shadow: 0 2px 0 #2c3848;
+    }
+
+    /* کارت سلطنتی روبیکا */
+    .rubika-royal {
+      background: linear-gradient(135deg, #1b2533, #111a24);
+      border: 1px solid #f5b042;
+      border-radius: 48px;
+      padding: 24px 32px;
+      margin: 28px 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+      box-shadow: 0 12px 28px -8px rgba(0,0,0,0.7), inset 0 0 60px rgba(245, 176, 66, 0.03);
+      transition: 0.3s;
+      position: relative;
+    }
+
+    .rubika-royal::after {
+      content: "👑";
+      position: absolute;
+      top: -15px;
+      left: 30px;
+      font-size: 2rem;
+      filter: drop-shadow(0 0 12px #f5b042);
+    }
+
+    .rubika-royal:hover {
+      border-color: #f7d875;
+      transform: scale(1.005);
+      box-shadow: 0 16px 36px -8px rgba(245, 176, 66, 0.15);
+    }
+
+    .rubika-royal .info {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .rubika-royal .icon {
+      font-size: 3.2rem;
+      line-height: 1;
+      filter: drop-shadow(0 0 8px #f5b04266);
+    }
+
+    .rubika-royal .text h3 {
+      color: #f5d98f;
+      font-size: 2rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    .rubika-royal .text p {
+      color: #b8cee5;
+      font-size: 1rem;
+      max-width: 400px;
+    }
+
+    .rubika-royal .btn-link {
+      background: linear-gradient(135deg, #f5b042, #d48c2c);
+      color: #0b0e14;
+      padding: 14px 38px;
+      border-radius: 60px;
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 1.2rem;
+      box-shadow: 0 6px 0 #8f6620, 0 8px 20px rgba(245, 176, 66, 0.3);
+      transition: 0.2s;
+      border: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      letter-spacing: 0.5px;
+    }
+
+    .rubika-royal .btn-link:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 0 #8f6620, 0 12px 30px rgba(245, 176, 66, 0.4);
+      background: #f7c55e;
+    }
+
+    /* بخش حرفه‌ها (یونیتی، گودوت، HTML، پایتون) */
+    .skills-section {
+      background: #10181f;
+      border-radius: 32px;
+      padding: 28px 30px 30px;
+      margin: 30px 0 20px;
+      border-right: 5px solid #f5b042;
+      box-shadow: inset 0 0 40px rgba(0,0,0,0.4);
+    }
+
+    .skills-section h2 {
+      color: #f5b042;
+      font-size: 2rem;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .skills-section p {
+      color: #cbdae8;
+      margin-bottom: 18px;
+      font-size: 1.05rem;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px 28px;
+      margin: 12px 0 6px;
+    }
+
+    .skill-tags span {
+      background: #1e2a38;
+      padding: 10px 28px;
+      border-radius: 60px;
+      font-size: 1.15rem;
+      font-weight: 500;
+      border: 1px solid #3f5268;
+      color: #f5d98f;
+      box-shadow: 0 2px 0 #0b0e14;
+      transition: 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .skill-tags span:hover {
+      border-color: #f5b042;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 0 #0b0e14;
+    }
+
+    /* آموزش‌ها (همان مهارت‌ها) */
+    .edu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin: 20px 0 5px;
+    }
+
+    .edu-item {
+      background: #141e28;
+      border-radius: 24px;
+      padding: 22px 14px 18px;
+      text-align: center;
+      border: 1px solid #2d3c4c;
+      transition: 0.25s;
+    }
+
+    .edu-item:hover {
+      border-color: #f5b042;
+      box-shadow: 0 0 30px rgba(245, 176, 66, 0.04);
+    }
+
+    .edu-item h4 {
+      color: #f5c97a;
+      font-size: 1.6rem;
+      margin-bottom: 4px;
+    }
+
+    .edu-item p {
+      color: #b0c8dd;
+      font-size: 0.95rem;
+    }
+
+    .edu-item .emoji-big {
+      font-size: 2.2rem;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .footer {
+      margin-top: 40px;
+      text-align: center;
+      border-top: 1px solid #2a3645;
+      padding-top: 25px;
+      font-size: 0.95rem;
+      color: #8fa0b5;
+    }
+
+    .footer a {
+      color: #f5b042;
+      text-decoration: none;
+      margin: 0 12px;
+      font-weight: 500;
+      transition: 0.2s;
+    }
+
+    .footer a:hover {
+      color: #f7d875;
+      text-shadow: 0 0 10px #f5b04255;
+    }
+
+    /* ریسپانسیو */
+    @media (max-width: 680px) {
+      .container { padding: 18px; }
+      .header h1 { font-size: 2.4rem; }
+      .rubika-royal { flex-direction: column; align-items: stretch; padding: 24px 18px; }
+      .rubika-royal .btn-link { justify-content: center; }
+      .skill-tags { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- HEADER با تاج سلطنتی -->
+  <header class="header">
+    <h1>
+      <span>👑</span> کینگ استودیو <span>👑</span>
+    </h1>
+    <p>⚜️ پادشاهی بازی‌سازی &amp; برنامه‌نویسی ⚜️</p>
+  </header>
+
+  <!-- پروژه‌های اصلی -->
+  <h2 class="section-title">🚀 پروژه‌های سلطنتی</h2>
+  <div class="project-grid">
+    <div class="project-card">
+      <h3>🎮 گیم‌سنتر</h3>
+      <p>مرجع بازی‌های آنلاین</p>
+      <span class="badge">فعال</span>
+    </div>
+    <div class="project-card">
+      <h3>🧮 ماشین‌حساب حرفه‌ای</h3>
+      <p>محاسبات مهندسی + گرافیک</p>
+      <span class="badge">فعال</span>
+    </div>
+    <div class="project-card">
+      <h3>🐦 تویتر فرند</h3>
+      <p>شبکهٔ اجتماعی دوستانه</p>
+      <span class="badge">فعال</span>
+    </div>
+    <div class="project-card">
+      <h3>⚽ فونتبالیست شو</h3>
+      <p>لیگ فوتبال فانتزی</p>
+      <span class="badge">فعال</span>
+    </div>
+    <div class="project-card">
+      <h3>🤖 هوش‌مصنوعی رای</h3>
+      <p>ابزارهای AI رایگان</p>
+      <span class="badge badge-coming">به‌زودی</span>
+    </div>
+  </div>
+
+  <!-- کارت اختصاصی روبیکا با لینک مستقیم -->
+  <div class="rubika-royal">
+    <div class="info">
+      <div class="icon">📱</div>
+      <div class="text">
+        <h3>کانال رسمی روبیکا</h3>
+        <p>آخرین اخبار، آموزش‌ها و پروژه‌های کینگ استودیو — به پادشاهی بپیوندید.</p>
+      </div>
+    </div>
+    <a href="http://rubika.ir/KINGSTUDIO" target="_blank" class="btn-link">
+      🚀 ورود به کانال
+    </a>
+  </div>
+
+  <!-- بخش حرفه‌ها: یونیتی، گودوت، HTML، پایتون -->
+  <div class="skills-section">
+    <h2>⚔️ حرفه‌های کینگ</h2>
+    <p>
+      ما در کینگ استودیو با <strong>قدرتمندترین موتورها و زبان‌ها</strong> کار می‌کنیم. 
+      از ساخت بازی‌های حرفه‌ای با یونیتی و گودوت تا توسعه وب و هوش مصنوعی با HTML و پایتون — 
+      همه‌چیز در این پادشاهی امکان‌پذیر است.
+    </p>
+    <div class="skill-tags">
+      <span>🎮 یونیتی (C#)</span>
+      <span>🐧 گودوت (GDScript)</span>
+      <span>🌐 HTML &amp; CSS</span>
+      <span>🐍 پایتون</span>
+    </div>
+  </div>
+
+  <!-- آموزش‌های ویژه (همان چهار مورد) -->
+  <h2 class="section-title">📚 آموزش‌های ویژه</h2>
+  <div class="edu-grid">
+    <div class="edu-item">
+      <span class="emoji-big">🎮</span>
+      <h4>یونیتی</h4>
+      <p>بازی‌سازی 2D/3D، فیزیک، انیمیشن، AR/VR</p>
+    </div>
+    <div class="edu-item">
+      <span class="emoji-big">🐧</span>
+      <h4>گودوت</h4>
+      <p>متن‌باز، سبک، قدرتمند، GDScript و C#</p>
+    </div>
+    <div class="edu-item">
+      <span class="emoji-big">🌐</span>
+      <h4>HTML &amp; CSS</h4>
+      <p>طراحی وب، ریسپانسیو، انیمیشن، فرانت‌اند</p>
+    </div>
+    <div class="edu-item">
+      <span class="emoji-big">🐍</span>
+      <h4>پایتون</h4>
+      <p>هوش مصنوعی، دیتا، اتوماسیون، بک‌اند</p>
+    </div>
+  </div>
+
+  <!-- توضیح کوتاه پروژه‌ها با حال و هوای سلطنتی -->
+  <div style="background: #101a22; padding: 20px 24px; border-radius: 32px; margin-top: 25px; border: 1px solid #2c3a48;">
+    <p style="color: #d0ddee; display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+      <span style="font-size: 2rem;">👑</span>
+      <strong style="color: #f5b042;">بگ پروژه‌ای کینگ استودیو:</strong> 
+      گیم‌سنتر، ماشین‌حساب مهندسی، توییتر فرند، فونتبالیست شو و هوش‌مصنوعی رای — 
+      همه با موتورهای یونیتی و گودوت و زبان‌های HTML و پایتون ساخته می‌شوند.
+    </p>
+  </div>
+
+  <!-- فوتر با لینک‌ها -->
+  <footer class="footer">
+    <p>
+      <a href="#">کینگ استودیو</a> •
+      <a href="http://rubika.ir/KINGSTUDIO" target="_blank">روبیکا</a> •
+      <a href="#">یونیتی</a> •
+      <a href="#">گودوت</a> •
+      <a href="#">HTML</a> •
+      <a href="#">پایتون</a>
+    </p>
+    <p style="margin-top: 12px; font-size: 0.85rem; opacity: 0.7;">
+      © ۲۰۲۶ تمامی حقوق برای کینگ استودیو محفوظ است.
+    </p>
+  </footer>
+
+</div>
+<!-- پایان container -->
+</body>
+</html>
